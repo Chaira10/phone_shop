@@ -1,19 +1,304 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Phone Shop">
+    <meta name="author" content="Chaira Mentache">
+    <link rel="shortcut icon" href="{{ asset('/image/1354446307952.png') }}" type="image/x-icon">
+    <title>{% block title %}Phone Shop{% endblock %}</title>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="{{ asset('/css/boutique.css')}}">
+    <link href="{{ asset('/css/carousel.css')}}" rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="{{ asset('/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('/style.css')}}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+
+    
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link href="{{ asset('/css/slick.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/css/style.css')}}">
+    {% block stylesheets %}{% endblock %}
+
+  
+        
+</head>
+<body>
+<header class="mb-3">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
+        <a class="navbar-brand" href="{{ path('app_home')}}"><img src="{{ asset('/image/1354446307952.png') }}" class="img-fluid"><span class="mx-2">PhoneShop</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-5 " id="navbarCollapse">
+            <ul class="navbar-nav mr-auto justify-content-around ">
+                <li class="nav-item active ">
+                    <a class="nav-link  " href="{{ path('app_front_products')}}"><h5 class='text-light'>Boutique</h5><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link " href="{{ path('app_smartphone_produits')}}"><h5 class='text-light'>Smartphone</h5><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link " href="{{ path('app_tablette')}}"><h5 class='text-light'>Tablette</h5><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link " href="{{ path('app_accessoires')}}"><h5 class='text-light'>Accessoires</h5><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link " href="{{ path('app_about')}}"><h5 class='text-light'>Qui sommes-nous</h5><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active ">
+                    <a class="nav-link " href="{{ path('app_contact')}}"><h5 class='text-light'>Contact</h5><span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <div class='nav-item'>
+                {% if app.user %}
+                <a href='{{ path('app_account')}}'>Mon compte<small>({{ app.user.firstname }})</small></a> | <a href='{{ path('app_logout')}}'>Déconnexion</a>
+                {% else %}
+                <a href='{{ path('app_login')}}'>Connexion</a> | <a href='{{ path('app_register')}}'>Inscription</a>
+                {% endif %}
+                <a href='{{ path('app_cart')}}'><img src="{{ asset('img/icons/shopping-cart.png') }}" class="cart-icon mr-3 " height="18px" alt="panier"></a>
+            </div>
+            
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="mt-3">
+{# {% if block('carousel') is  defined %}
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                <div class="container">
+                    <div class="carousel-caption text-left">
+                        <h1>Example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Another example headline.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+                <div class="container">
+                    <div class="carousel-caption text-right">
+                        <h1>One more for good measure.</h1>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    {% endif %} #}
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="marketing {% if block('carousel') is not defined %}mt-5{% endif%}">
+    {% block carousel %}
+    {% endblock %}
+    </div>
+        <!-- Three columns of text below the carousel -->
+        <div class="container marketing mt-5 ">
+    {% block content %}
+    {% endblock %}
+</div>
+    {% block body %}
+    {% endblock %}
+        <!-- /END THE FEATURETTES -->
+
+    <!-- /.container -->
+
+    <!-- FOOTER -->
+    </main>
+<footer class="footer_dark fixed-bottom mt-0 bg-dark mb-0">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="widget">
+                        <div class="footer_logo">
+                            <a href="#"><img src="{{asset('/image/Logo2.png')}}" alt="logo"/></a>
+                        </div>
+                        <p>En exclusivité pour tous ! Profitez jusqu'à -50% sur ces offres pendant nos journées intelligentes. Faites des achats intelligents avec des remises sur l'électronique, les téléphones et les articles pour la maison. Jusqu'à -50% de protection de l'acheteur. Livraison gratuite. Promotion d'été. Grande valeur. Une multitude de vendeurs.</p>
+                    </div>
+                    <div class="widget">
+                        <ul class="social_icons social_white">
+                            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                            <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                            <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                            <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                            <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h6 class="widget_title">Liens utiles</h6>
+                        <ul class="widget_links">
+                            <li><a href="#">A propos</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Localisation</a></li>
+                            <li><a href="#">Membres</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h6 class="widget_title">Categories</h6>
+                        <ul class="widget_links">
+                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Tablette</a></li>
+                            <li><a href="#">Ecouteurs</a></li>
+                            <li><a href="#">Montre</a></li>
+                            <li><a href="#">Accessoires</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="widget">
+                        <h6 class="widget_title">Mon compte</h6>
+                        <ul class="widget_links">
+                            <li><a href="#">Mon compte</a></li>
+                            <li><a href="#">Réduction</a></li>
+                            <li><a href="#">Retours</a></li>
+                            <li><a href="#">Historique des commandes</a></li>
+                            <li><a href="#">Suivi de commande</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="widget">
+                        <h6 class="widget_title">Info de Contact</h6>
+                        <ul class="contact_info contact_info_light">
+                            <li>
+                                
+                                <p> 3 Rue Léon Gambetta 75000 Paris</p>
+                            </li>
+                            <li>
+
+                                <a href="mailto:contact@eshop.com">contact@eshop.com</a>
+                            </li>
+                            <li>
+                                
+                                <p>+ 33 7 52 15 25 60</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_footer border-top-tran">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-md-0 text-center text-md-left">© 2022 Tous droits réservés</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="footer_payment text-center text-lg-right">
+                        <li><a href="#"><img src="{{asset('/images/visa.png')}}" alt="visa"></a></li>
+                        <li><a href="#"><img src="{{asset('images/discover.png')}}" alt="discover"></a></li>
+                        <li><a href="#"><img src="{{asset('images/master_card.png')}}" alt="master_card"></a></li>
+                        <li><a href="#"><img src="{{asset('images/paypal.png')}}" alt="paypal"></a></li>
+                        <li><a href="#"><img src="{{asset('images/amarican_express.png')}}" alt="amarican_express"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="{{ asset('/js/parallax1.js')}}"></script>
+<script src="{{ asset('/js/jquery-1.12.4.min.js')}}"></script>
+<script src="{{ asset('/js/popper.min.js')}}"></script>
+<script src="{{ asset('/bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{ asset('/owlcarousel/js/owl.carousel.min.js')}}"></script>
+        <script src="{{ asset('/js/magnific-popup.min.js')}}"></script>
+        <script src="{{ asset('/js/waypoints.min.js')}}"></script>
+        <script src="{{ asset('/js/parallax.js')}}"></script>
+        <script src="{{ asset('/js/jquery.countdown.min.js')}}"></script>
+        <script src="{{ asset('/js/imagesloaded.pkgd.min.js')}}"></script>
+        <script src="{{ asset('/js/isotope.min.js')}}"></script>
+        <script src="{{ asset('/js/jquery.dd.min.js')}}"></script>
+        <script src="{{ asset('/js/slick.min.js')}}"></script>
+        <script src="{{ asset('/js/jquery.elevatezoom.js')}}"></script>
+        <script src="{{ asset('/js/scripts.js')}}"></script>
+        <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="{{ asset('/js/bootstrap.bundle.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+    
+        <script src="plugins/jquery-ui/jquery-ui.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="plugins/selectbox/jquery.selectbox-0.1.3.min.js"></script>
+    <script src="plugins/countdown/jquery.syotimer.js"></script>
+    <script src="options/optionswitcher.js"></script>
+    <script src="js/custom.js"></script>
+
+{% block javascripts %} {% endblock %}
+</body>
 </html>

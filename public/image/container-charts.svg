@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="649" viewBox="0 0 640 649">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.491" y2="0.984" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8a3df2"/>
+      <stop offset="0.832" stop-color="#5c53e3" stop-opacity="0.941"/>
+      <stop offset="1" stop-color="#312c79"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.488" y1="0.468" x2="0.509" y2="0.977" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8ae6fb"/>
+      <stop offset="0.855" stop-color="#33828d"/>
+      <stop offset="1" stop-color="#2c6f79"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.497" y1="0.71" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2a18c"/>
+      <stop offset="0.834" stop-color="#9f9cf5"/>
+      <stop offset="1" stop-color="#9491db"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.451" y1="0.157" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3950f5"/>
+      <stop offset="0.865" stop-color="#b76de1"/>
+      <stop offset="1" stop-color="#cb9fbe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.477" y1="0.739" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ec3e9b"/>
+      <stop offset="0.84" stop-color="#89245a"/>
+      <stop offset="1" stop-color="#761f4e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="0.495" y1="0.368" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#7043f3"/>
+      <stop offset="1" stop-color="#8be2fb"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-7" x1="0.53" y1="0.469" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dd58f2"/>
+      <stop offset="0.854" stop-color="#7f328b"/>
+      <stop offset="1" stop-color="#6f2c79"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-8" x1="0.475" y1="0.583" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#61a8ef"/>
+      <stop offset="0.837" stop-color="#39628b"/>
+      <stop offset="1" stop-color="#315478"/>
+    </linearGradient>
+  </defs>
+  <g id="container-charts" transform="translate(-670 -162)">
+    <g id="chart1" transform="matrix(0.996, 0.087, -0.087, 0.996, 134.299, 113.418)">
+      <path id="Path_6" data-name="Path 6" d="M0,0H102V52H10.6Z" transform="translate(764 95)" fill="rgba(98,88,242,0.5)"/>
+      <path id="Path_1" data-name="Path 1" d="M101.5,0,203,249.871s-50.75,28.968-101.5,28.968S0,249.871,0,249.871Z" transform="translate(1028.322 279.439) rotate(164)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="chart2" transform="translate(192.037 936.428) rotate(-48)">
+      <path id="Path_8" data-name="Path 8" d="M0,0H84V80s-33.135,27.325-54.135,7.325S0,0,0,0Z" transform="translate(775.811 144.902)" fill="rgba(10,117,134,0.65)"/>
+      <path id="Path_2" data-name="Path 2" d="M92.4-17.087l85.436,204.354s-47.525,25.788-94.078,28.574S-.149,201.094-.149,201.094Z" transform="translate(976.903 304.123) rotate(172)" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="chart3" transform="translate(1047.581 1406.829) rotate(-106)">
+      <path id="Path_10" data-name="Path 10" d="M0,0H63V47L-9.581,50.8Z" transform="matrix(0.999, 0.052, -0.052, 0.999, 851.774, 51.43)" fill="rgba(182,89,17,0.78)"/>
+      <path id="Path_7" data-name="Path 7" d="M65.764-1.414l45.423,181.457s-27.8,20.873-55.594,20.873S-1.3,180.807-1.3,180.807Z" transform="translate(940.755 243.68) rotate(-173)" fill="url(#linear-gradient-3)"/>
+    </g>
+    <g id="chart4" transform="matrix(0.899, 0.438, -0.438, 0.899, 277.864, -222.126)">
+      <path id="Path_12" data-name="Path 12" d="M0,0H87.911L67.169,64.24,0,60.52Z" transform="translate(992 416)" fill="rgba(236,78,62,0.67)"/>
+      <path id="Path_9" data-name="Path 9" d="M71.6.285l100.369,142.48s-42.992,16.551-85.984,16.551S-.734,142.735-.734,142.735Z" transform="translate(926.848 300.128) rotate(14)" fill="url(#linear-gradient-4)"/>
+    </g>
+    <g id="charts5" transform="translate(203.933 -165.365) rotate(21)">
+      <path id="Path_13" data-name="Path 13" d="M-.731.682l61.778.782L40.916,63.812,0,63Z" transform="translate(1071.213 376.995) rotate(-47)" fill="#932761"/>
+      <path id="Path_11" data-name="Path 11" d="M59.364,5.184,118.13,140.865s-29.519,19.626-59.051,19.626S-.5,139.977-.5,139.977Z" transform="translate(964.793 358.329) rotate(-40)" fill="url(#linear-gradient-5)"/>
+    </g>
+    <g id="charts6" transform="matrix(0.951, 0.309, -0.309, 0.951, 167.684, -117.369)">
+      <path id="Path_15" data-name="Path 15" d="M4.488-35.808,65.13-4.817,65,11.453-.4,13.123Z" transform="matrix(0.985, -0.174, 0.174, 0.985, 1078.575, 300.617)" fill="rgba(34,28,117,0.78)"/>
+      <path id="Path_3" data-name="Path 3" d="M51.336,4.094l48.4,122.768S74.8,141.57,49.868,141.57-2.591,126.707-2.591,126.707Z" transform="matrix(0.105, -0.995, 0.995, 0.105, 1005.285, 370.486)" fill="url(#linear-gradient-6)"/>
+    </g>
+    <g id="charts7">
+      <path id="Path_17" data-name="Path 17" d="M.793-1.084,24.859,12.784,25,24H0Z" transform="translate(1093.053 439.112) rotate(-42)" fill="rgba(86,13,98,0.55)"/>
+      <path id="Path_14" data-name="Path 14" d="M38.031,2.549,80.233,103.7S59.677,117.47,39.63,117.47,3.055,106.982,3.055,106.982Z" transform="translate(1042.564 537.678) rotate(-106)" fill="url(#linear-gradient-7)"/>
+    </g>
+    <path id="Path_16" data-name="Path 16" d="M35.772.295,72.449,91.773s-16.3,9.219-35.1,9.219a76.634,76.634,0,0,1-32.4-7.081Z" transform="translate(1064.265 520.609) rotate(-147)" fill="url(#linear-gradient-8)"/>
+    <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="205.5" cy="27" rx="205.5" ry="27" transform="translate(817 736)" fill="#645757"/>
+    <g id="text1" transform="translate(-1 -3)">
+      <text id="_1" data-name="1" transform="translate(980 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">1</tspan></text>
+      <text id="Text_here" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1" data-name="Line 1" y2="24" transform="translate(968 171)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g id="text2" transform="translate(-183 164)">
+      <text id="_2" data-name="2" transform="translate(980 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">2</tspan></text>
+      <text id="Text_here-2" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1-2" data-name="Line 1" y2="24" transform="translate(968 171)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g id="text3" transform="translate(-183 358)">
+      <text id="_3" data-name="3" transform="translate(980 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">3</tspan></text>
+      <text id="Text_here-3" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1-3" data-name="Line 1" y2="24" transform="translate(968 171)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g id="text4" transform="translate(-84 468)">
+      <text id="_4" data-name="4" transform="translate(980 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">4</tspan></text>
+      <text id="Text_here-4" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1-4" data-name="Line 1" y2="24" transform="translate(968 171)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g id="text5" transform="translate(251 475)">
+      <text id="_5" data-name="5" transform="translate(980 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">5</tspan></text>
+      <text id="Text_here-5" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="26" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1-5" data-name="Line 1" y2="24" transform="translate(968 171)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g id="text6" transform="translate(322 376)">
+      <text id="_6" data-name="6" transform="translate(975 194)" fill="#fff" font-size="23" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">6</tspan></text>
+      <text id="Text_here-6" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="23" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1-6" data-name="Line 1" y2="24" transform="translate(960 172)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g id="text7" transform="translate(305 267)">
+      <text id="_7" data-name="7" transform="translate(959 193)" fill="#fff" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">7</tspan></text>
+      <text id="Text_here-7" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="20" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1-7" data-name="Line 1" y2="24" transform="translate(946 171)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g id="text8" transform="translate(245 190)">
+      <text id="_8" data-name="8" transform="translate(957 193)" fill="#fff" font-size="20" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">8</tspan></text>
+      <text id="Text_here-8" data-name="Text here" transform="translate(853 193)" fill="#fff" font-size="20" font-family="SegoeUI, Segoe UI" text-decoration="underline"><tspan x="0" y="0">Text here</tspan></text>
+      <line id="Line_1-8" data-name="Line 1" y2="24" transform="translate(945 173)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    {# {{ form_row(form.createdAt) }} #}
+    {{ form_row(form.carrierName) }}
+    {{ form_row(form.carrierPrice) }}
+    {{ form_row(form.total) }}
+    {{ form_row(form.isPaid) }}
+    {{ form_row(form.statut) }}
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

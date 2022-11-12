@@ -1,0 +1,39 @@
+{% extends 'base-backend.html.twig' %}
+{% block title %}Carrier index{% endblock %}
+
+{% block body %}
+    <h1>Carrier index</h1>
+        <a href="{{ path('app_carrier_new') }}" class="btn btn-dark">Create new</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th class="text-end">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carrier in carriers %}
+            <tr>
+                <td>{{ carrier.id }}</td>
+                <td>{{ carrier.name }}</td>
+                <td>{{ carrier.description }}</td>
+                <td>{{ carrier.price }}</td>
+                <td class="text-end">
+                    <a href="{{ path('app_carrier_show', {'id': carrier.id}) }}" class="btn btn-dark"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_carrier_edit', {'id': carrier.id}) }}"  class="btn btn-success ms-2"><i class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

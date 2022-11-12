@@ -1,0 +1,54 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <h1>Product index</h1>
+    <a href="{{ path('app_product_new') }}"class="btn btn-dark">Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                {# <th>Slug</th> #}
+                <th>Image</th>
+                <th>Subtitle</th>
+                {# <th>Description</th> #}
+                <th>Price</th>
+                <th>Mise a jour</th>
+                <th class="text-end">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                {# <td>{{ product.slug }}</td> #}
+                <td>
+                {% if product.image is defined and product.image is not null %}
+                <a href=" {{ asset('images/products/' ~ product.image)}} " data-lightbox='image-{{loop.index0 }}' data-name="{{product.name}}">
+                <img src="{{ asset('images/products/' ~ product.image) }}"  alt"" class="img-list"></a>
+                {% else %}
+                N/A
+                {% endif %}
+                </td>
+                <td>{{ product.subtitle }}</td>
+                {# <td>{{ product.description }}</td> #}
+                <td>{{ product.price }}</td>
+                <td>{{ product.updatedAt ? product.updatedAt|date('d-m-Y H:i:s') : 'N/A' }}</td>
+                <td class="text-end">
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}"class="btn btn-dark"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-success ms-2"><i class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

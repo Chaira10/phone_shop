@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1939.18" height="449.998" viewBox="0 0 1939.18 449.998">
+  <g id="line" transform="translate(2.472 -519.458)">
+    <path id="line-blue" d="M3,80.636c3.578-23.5,240.839-138.3,790.273-37,462.893,85.342,853.333,195.5,1129.727,0" transform="translate(-3 646.988)" fill="none" stroke="#1f2159" stroke-width="5"/>
+    <path id="line-black" d="M3,41.266C6.549,10.4,303.808-68.8,813.593,163.411,1351.326,408.357,1648.809,576.47,1923,319.7" transform="translate(12 518.996)" fill="none" stroke="#171717" stroke-width="5"/>
+    <path id="segitiga" d="M55.412,51.935,24.325,4,3,59.112Z" transform="translate(690.5 791.5)" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="3"/>
+  </g>
+</svg>

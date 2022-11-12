@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - La boutique{% endblock %}
+
+{% block content %}
+
+    <h1>Mon compte</h1>
+    {% if is_granted('ROLE_ADMIN')%}
+        <small><a href="{{ path('app_admin_dashboard')}}"> Vous êtes administrateur, acceder au backoffice </a></small>
+    {% endif %}
+
+    <p>Bienvenue {{ app.user.firstname}} dans votre compte. </p><br/>
+
+    <div class="container ">
+    <div class="row ">
+    <div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+  <img src="{{ asset('/img/icons/47.png') }}" class="card-img-top img-fluid" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Mes adresses</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href='{{ path('app_acount_address')}}'class="text-light btn btn-info">Gerer mes adresses</a>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+  <img src="{{ asset('/img/icons/48.png') }}" class="card-img-top img-fluid" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Modifier mot de passe</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href='{{ path('app_account_password')}}'class="text-light btn btn-success ">Modifier MP</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+  <img src="{{ asset('/img/icons/49.png') }}" class="card-img-top img-fluid" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Mes commandes</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href='{{ path('app_account_order')}}'class="text-light btn btn-warning">Mes commandes</a>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<br><br><br><br><br><br>
+{% endblock %}

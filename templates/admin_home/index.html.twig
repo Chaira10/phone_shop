@@ -1,0 +1,40 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Home index{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_admin_home_new') }}" class="btn btn-dark">Create new</a>
+    <h1>Home index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Texte</th>
+                <th>Active</th>
+                <th class="text-end">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home in homes %}
+            <tr>
+                <td>{{ home.id }}</td>
+                <td>{{ home.title }}</td>
+                <td>{{ home.text|raw }}</td>
+                <td>{{ home.isActive ? 'Oui' : 'Non' }}</td>
+                <td class="text-end">
+                    <a href="{{ path('app_admin_home_show', {'id': home.id}) }}" class="btn btn-dark"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_admin_home_edit', {'id': home.id}) }}" class="btn btn-success ms-2"><i class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Nouveau Transporteur{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_carrier_index') }}" class="btn btn-dark">back to list</a>
+    <h1>Creer nouveau transporteur</h1>
+
+    {{ include('carrier/_form.html.twig') }}
+
+
+{% endblock %}

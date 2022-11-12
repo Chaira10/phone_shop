@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block content %}
+	<div class="container">
+<h2>Nous contacter</h2>
+<div class="section pb_70">
+	<div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-md-6">
+                <div class="contact_wrap contact_style3">
+                    <div class="contact_icon">
+                        <img class="img-fluid my-3" src="{{ asset('/img/icons/4.png') }}" alt="">
+                    </div>
+                    <div class="contact_text">
+                        <span>Adresse</span>
+                        <p>3 Rue Léon Gambetta, 75000 Paris</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="contact_wrap contact_style3">
+                    <div class="contact_icon">
+                        <img class="img-fluid my-3" src="{{ asset('/img/icons/5.png') }}" alt="">
+                    </div>
+                    <div class="contact_text">
+                        <span>Adresse Email </span>
+                        <a href="mailto:info@sitename.com">contact@eshop.fr </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+                <div class="contact_wrap contact_style3">
+                    <div class="contact_icon ">
+                        <img class="img-fluid my-3" src="{{ asset('/img/icons/6.png') }}" alt="">
+                    </div>
+                    <div class="contact_text">
+                        <span>Téléphone</span>
+                        <p>(+33) 7 52 15 25 60</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="container align-item-center">
+{% for message in app.flashes('notice') %}
+<div class='alert alert-info'>{{ message }}</div>
+{% endfor %}
+<div class='container '>
+{# d-flex justify-content-center #}
+<div class='row '>
+<div class='col-md-2'></div>
+<div class='col-md-8 '>{{ form(form)}}</div>
+<div class='col-md-2'></div>
+</div>
+</div>
+
+<section>
+</div>
+<br><br><br><br><br><br>
+{% endblock %}

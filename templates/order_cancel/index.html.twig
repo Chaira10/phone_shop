@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Echec de la commande {% endblock %}
+
+{% block content %}
+<h2>Confirmation de commande</h2>
+<p>Bonjour <strong>{{ order.user.firstname }} {{ order.user.lastname }}</strong>,<br/><br/><br/>  il semblerait que le paiement de la commande n°<strong>{{ order.reference}}</strong>est échoué.<br/> Une confirmation d'echec de la commande vient de vous être envoyée par email à l'adresse <strong>{{ order.user.email }}</strong>.
+
+<hr>
+<a href'{{ path('app_order')}}' class="btn btn-success">Pour réessayer</a>
+</p>
+{# {{ dump(order)}} #}
+{% endblock %}

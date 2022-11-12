@@ -1,0 +1,11 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Edit Carrier{% endblock %}
+
+{% block body %}
+    <h1>Edit Carrier</h1>
+    <a href="{{ path('app_carrier_index') }}" class="btn btn-dark">back to list</a>
+    {{ include('carrier/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    {{ include('carrier/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}OrderDetails index{% endblock %}
+
+{% block body %}
+    <h1>OrderDetails index</h1>
+    <a href="{{ path('app_admin_order_details_new') }}" class="btn btn-dark">Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th  class="text-end">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order_detail in order_details %}
+            <tr>
+                <td>{{ order_detail.id }}</td>
+                <td>{{ order_detail.product }}</td>
+                <td>{{ order_detail.quantity }}</td>
+                <td>{{ order_detail.price }}</td>
+                <td>{{ order_detail.total }}</td>
+                <td  class="text-end">
+                    <a href="{{ path('app_admin_order_details_show', {'id': order_detail.id}) }}" class="btn btn-dark"><i class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_admin_order_details_edit', {'id': order_detail.id}) }}"  class="btn btn-success ms-2"><i class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

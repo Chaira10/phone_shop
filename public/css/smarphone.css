@@ -1,0 +1,14 @@
+/* ajouter une image au background, fixed, cover */
+.jumbotron{
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url('../images/products/32-6366d79d7a408809923101.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover; 
+  }
+  
+  /* appliquer un color au h1 et p #fff */
+  .display-4, .lead{
+    color: #fff;
+    text-align: center;
+  }
+  

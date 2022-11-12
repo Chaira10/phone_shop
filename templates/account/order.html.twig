@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes{% endblock %}
+
+{% block content %}
+    <h1>Mes commandes</h1>
+    <p> </p><br/>
+    <a href='{{ path('app_account')}}' class=" btn btn-secondary">Retour </a>
+    
+    {% if orders|length == 0 %}
+    <hr>
+    <p class="text-center">vous n'avez pas de commande<a href='{{ path('app_acount_address_add')}}'> Cliquer ici </a></p>
+    {% else %}
+    <table class="table my-3">
+  <thead>
+    <tr>
+      <th scope="col">Référence</th>
+      <th scope="col">Passée le</th>
+      <th scope="col">Produit(s)</th>
+      <th scope="col">Total</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+    {# {{ dump(order)}} #}
+    <tr>
+      <td><span class='badge badge-secondary'>{{ order.reference}}</span></td>
+      <td scope="row">{{ order.createdAt|date('d/m/Y')}}</td>
+      <td>{{ order.orderDetails|length}}</td>
+      <td>{{ order.carrierPrice + order.getTotal }}€</td>
+      <td class="text-right "><a href="{{ path('app_account_order_show', {'reference': order.reference })}}" class=" btn btn-success">Voir ma commande</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+        
+    {% endif %}
+    <br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
