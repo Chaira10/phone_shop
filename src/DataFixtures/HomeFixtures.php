@@ -14,7 +14,8 @@ class HomeFixtures extends Fixture implements DependentFixtureInterface
     {
         $home = new Home();
         $home->setTitle('Home');
-        $home->setText('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s');
+        $home->setText('Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s');
         $home->setIsActive(1);
         $home->addCarousel($this->getReference(CarouselFixtures::CAROUSEL1));
         $manager->persist($home);
